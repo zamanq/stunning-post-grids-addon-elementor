@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gridly-navbar {
+    margin-top: 50px;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li a {
+            padding: 10px;
+            list-style: none;
+            text-decoration: none;
+            color: #333333;
+            font-size: 20px;
+        }
+    }
+}
+
+.gridly-general-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+
+    .gridly-title {
+        text-align: center;
+    }
+}
+
+.gridly-block-container {
+    max-width: 767px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .gridly-single-item {
+        padding: 10px;
+        margin: 5px 15px;
+    }
+}
+
+.opacity-0 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.opacity-1 {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s linear;
+}

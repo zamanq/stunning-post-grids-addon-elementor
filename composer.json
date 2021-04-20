@@ -1,0 +1,25 @@
+{
+	"name": "xoxo-dev/gridly",
+	"description": "Gridly for Elementor. Prettify your Blog and Custom Post Types.",
+	"keywords": [
+		"WordPress",
+		"Plugin",
+		"Elementor addon",
+        "Blog"
+	],
+	"license": "GPL-3.0",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "XoXo Dev",
+			"email": "hello@xoxodev.com",
+			"homepage": "https://www.xoxodev.com"
+		}
+	],
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Gridly\\": "./inc"
+		}
+	}
+}
