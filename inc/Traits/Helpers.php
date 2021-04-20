@@ -7,12 +7,63 @@
 
 namespace Gridly\Traits;
 
+use WP_Query;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Helpers trait
  */
 trait Helpers {
+
+    /**
+     * The query
+     * 
+     * @param array $settings
+     * 
+     * @return object $the_query
+     */
+    public static function the_query( array $settings ) {
+        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+        $args = array(
+            'post_type'           => ! empty( $settings['gridly_post_type'] ) ? sanitize_text_field( $settings['gridly_post_type'] ) : 'post',
+            'post_status'         => 'publish',
+            'posts_per_page'      => ! empty( $settings['gridly_posts_per_page'] ) ? absint( $settings['gridly_posts_per_page'] ) : 3,
+            'orderby'             => ! empty( $settings['gridly_post_orderby'] ) ? sanitize_text_field( $settings['gridly_post_orderby'] ) : 'date',
+            'order'               => ! empty( $settings['gridly_post_order'] ) ? sanitize_text_field( $settings['gridly_post_order'] ) : 'desc',
+            'ignore_sticky_posts' => 1,
+            'paged'               => $paged,
+        );
+
+        $args['tax_query'] = array();
+
+        $taxonomies = get_object_taxonomies( $settings['gridly_post_type'], 'objects' );
+
+        foreach ( $taxonomies as $object ) {
+            $setting_key = $object->name . '_ids';
+
+            if ( ! empty( $settings[ $setting_key ] ) ) {
+                $args['tax_query'][] = array(
+                    'taxonomy' => $object->name,
+                    'field'    => 'term_id',
+                    'terms'    => $settings[ $setting_key ],
+                );
+            }
+        }
+
+        if ( ! empty( $args['tax_query'] ) ) {
+            $args['tax_query']['relation'] = 'AND';
+        }
+
+        if ( ! empty( $settings['gridly_post_authors'] ) ) {
+            $args['author__in'] = absint( $settings['gridly_post_authors'] );
+        }
+
+        $the_query = new WP_Query( $args );
+
+        return $the_query;
+    }
 
     /**
      * Get all post types
