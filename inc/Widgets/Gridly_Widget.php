@@ -70,6 +70,7 @@ class Gridly_Widget extends Widget_Base {
 	 */
 	protected function _register_controls() {
 
+		// Main Query Controls.
 		$this->start_controls_section(
 			'gridly_content_section',
 			array(
@@ -159,6 +160,7 @@ class Gridly_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 
+		// Style Controls.
 		$this->start_controls_section(
 			'gridly_style_section',
 			array(
@@ -176,6 +178,54 @@ class Gridly_Widget extends Widget_Base {
                 'options'     => array(
 					'grid'    => __( 'Grid', 'gridly' ),
 					'masonry' => __( 'Masonry', 'gridly' ),
+				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_title_toggle', 
+			array(
+                'label'        => __( 'Show Title?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_image_toggle', 
+			array(
+                'label'        => __( 'Show Image?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_excerpt_toggle', 
+			array(
+                'label'        => __( 'Show Excerpt?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_excerpt_length', 
+			array(
+                'label'   => __( 'Excerpt Length', 'gridly' ),
+                'type'    => Controls_Manager::NUMBER,
+                'default' => 20,
+				'condition' => array(
+					'gridly_post_excerpt_toggle' => 'yes',
 				),
 			)
         );
