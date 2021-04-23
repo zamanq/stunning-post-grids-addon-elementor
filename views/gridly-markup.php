@@ -8,10 +8,10 @@
 defined( 'ABSPATH' ) || exit;
 
 // Extract each setting into variables.
-$show_title     = $settings['gridly_post_title_toggle'];
-$show_image     = $settings['gridly_post_image_toggle'];
-$show_excerpt   = $settings['gridly_post_excerpt_toggle'];
-$excerpt_length = absint( $settings['gridly_post_excerpt_length'] );
+$show_title     = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
+$show_image     = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
+$show_excerpt   = isset( $settings['gridly_post_excerpt_toggle'] ) ? sanitize_text_field( $settings['gridly_post_excerpt_toggle'] ) : 'yes';
+$excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $settings['gridly_post_excerpt_length'] ) : 20;
 
 ?>
 
@@ -19,7 +19,7 @@ $excerpt_length = absint( $settings['gridly_post_excerpt_length'] );
 
     <?php if ( 'yes' === $show_image ) : ?>
         <a href="<?php the_permalink(); ?>">
-            <img class="gridly-single-item-img" src="<?php the_post_thumbnail_url( 'thumbnail' ); ?>" alt="<?php the_title(); ?>" />
+            <img class="gridly-single-item-img" src="<?php the_post_thumbnail_url( 'medium' ); ?>" alt="<?php the_title(); ?>" />
         </a>
     <?php endif; ?>
 

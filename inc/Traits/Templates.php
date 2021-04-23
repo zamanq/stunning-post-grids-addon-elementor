@@ -7,6 +7,8 @@
 
 namespace Gridly\Traits;
 
+use Elementor\Plugin;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -25,9 +27,18 @@ trait Templates {
         
         $the_query = Helpers::the_query( $settings );
 
+        $gridly_layout  = isset( $settings['gridly_post_layout'] ) ? sanitize_text_field( $settings['gridly_post_layout'] ) : 'grid';
+        $gridly_columns = isset( $settings['gridly_post_column_width'] ) ? absint( $settings['gridly_post_column_width'] ) : 200;
+
+        $data_masonry = array(
+            'itemSelector'    => '.gridly-single-item',
+            'columnWidth'     => $gridly_columns,
+            'percentPosition' => true
+        );
+
     ?>
     <div class="gridly-wrapper">
-        <div class="gridly-row">
+        <div class="gridly-row" <?php echo 'masonry' === $gridly_layout ? 'data-masonry=' . json_encode( $data_masonry ) : ''; ?>>
 
             <?php
                 if ( $the_query->have_posts() ) :
@@ -45,5 +56,16 @@ trait Templates {
 
     </div>
 
-    <?php }
+    <?php if ( Plugin::instance()->editor->is_edit_mode() ) { ?>
+        <script type="text/javascript">
+            var elem = document.querySelector('.gridly-row');
+            new Masonry( elem, {
+            // options
+            itemSelector: '.gridly-single-item',
+            columnWidth: <?php echo $gridly_columns; ?>,
+            percentPosition: true
+            });
+        </script>
+   <?php }
+    }
 }

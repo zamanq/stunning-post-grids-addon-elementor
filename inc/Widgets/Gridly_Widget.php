@@ -183,6 +183,18 @@ class Gridly_Widget extends Widget_Base {
         );
 
 		$this->add_control(
+            'gridly_post_column_width', 
+			array(
+                'label'   => __( 'Column Width', 'gridly' ),
+                'type'    => Controls_Manager::NUMBER,
+                'default' => 200,
+				'condition' => array(
+					'gridly_post_layout' => 'masonry',
+				),
+			)
+        );
+
+		$this->add_control(
             'gridly_post_title_toggle', 
 			array(
                 'label'        => __( 'Show Title?', 'gridly' ),
