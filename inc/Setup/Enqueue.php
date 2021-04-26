@@ -27,9 +27,6 @@ class Enqueue {
 	 */
 	public function enqueue_frontend_scripts() {
 		wp_enqueue_style( 'gridly-styles', GRIDLY_DIR_URL . '/assets/css/styles.css', null, GRIDLY_VERSION, 'all' );
-
-		//Masonry.
-		wp_enqueue_script( 'gridly-masonry', GRIDLY_DIR_URL . '/assets/js/masonry.min.js', array(), GRIDLY_VERSION, true );
 	}
 
     /**

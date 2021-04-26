@@ -176,20 +176,7 @@ class Gridly_Widget extends Widget_Base {
                 'type'        => Controls_Manager::SELECT,
                 'default'     => 'grid',
                 'options'     => array(
-					'grid'    => __( 'Grid', 'gridly' ),
-					'masonry' => __( 'Masonry', 'gridly' ),
-				),
-			)
-        );
-
-		$this->add_control(
-            'gridly_post_column_width', 
-			array(
-                'label'   => __( 'Column Width', 'gridly' ),
-                'type'    => Controls_Manager::NUMBER,
-                'default' => 200,
-				'condition' => array(
-					'gridly_post_layout' => 'masonry',
+					'grid'       => __( 'Grid', 'gridly' ),
 				),
 			)
         );
