@@ -158,6 +158,18 @@ class Gridly_Widget extends Widget_Base {
 			)
         );
 
+		$this->add_control(
+            'gridly_post_pagination_toggle', 
+			array(
+                'label'        => __( 'Show Pagination?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+        );
+
 		$this->end_controls_section();
 
 		// Style Controls.
@@ -177,6 +189,23 @@ class Gridly_Widget extends Widget_Base {
                 'default'     => 'grid',
                 'options'     => array(
 					'grid'       => __( 'Grid', 'gridly' ),
+				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_columns', 
+			array(
+                'label'       => __( 'Columns Per Row', 'gridly' ),
+                'type'        => Controls_Manager::SELECT,
+                'default'     => 3,
+                'options'     => array(
+					4 => __( 'Two', 'gridly' ),
+					3 => __( 'Three', 'gridly' ),
+					2 => __( 'Four', 'gridly' ),
+				),
+				'selectors'   => array(
+					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
 				),
 			)
         );

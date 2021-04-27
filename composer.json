@@ -20,6 +20,9 @@
 	"autoload": {
 		"psr-4": {
 			"Gridly\\": "./inc"
-		}
+		},
+		"files": [
+			"./inc/Functions.php"
+		]
 	}
 }
