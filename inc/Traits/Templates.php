@@ -38,7 +38,7 @@ trait Templates {
                 if ( $the_query->have_posts() ) :
                     while ( $the_query->have_posts() ) :
                         $the_query->the_post();
-                        require GRIDLY_DIR_PATH . 'views/gridly-markup.php';
+                        require GRIDLY_DIR_PATH . 'views/partials/gridly-' . $gridly_layout . '.php';
                     endwhile;
                 endif;
                 wp_reset_postdata();

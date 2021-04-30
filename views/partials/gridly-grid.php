@@ -1,6 +1,6 @@
 <?php
 /**
- * Markup for Gridly Post Types Layout
+ * Markup for Gridly Grid
  * 
  * @package Gridly
  */
