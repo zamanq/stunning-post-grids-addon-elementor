@@ -33,7 +33,7 @@ trait Templates {
     ?>
     
     <section class="gridly-wrapper">
-        <div class="gridly-grids">
+        <div class="<?php echo 'smartcard' === $gridly_layout ? 'smart-card-wrapper' : 'gridly-grids'; ?>">
             <?php
                 if ( $the_query->have_posts() ) :
                     while ( $the_query->have_posts() ) :

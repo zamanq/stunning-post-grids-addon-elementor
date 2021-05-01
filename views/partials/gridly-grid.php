@@ -23,7 +23,7 @@ $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $se
         </div>
     </div>
 
-    <?php if ( 'yes' === $show_image ) : ?>
+    <?php if ( 'yes' === $show_image && has_post_thumbnail( get_the_ID() ) ) : ?>
         <div class="grid-img" style="background-image:url('<?php the_post_thumbnail_url( 'medium' ); ?>')"></div>
         <a href="<?php the_permalink(); ?>" class="grid_link">
             <div class="grid-img-hover" style="background-image:url('<?php the_post_thumbnail_url( 'full' ); ?>')"></div>

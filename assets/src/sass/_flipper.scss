@@ -34,6 +34,10 @@
 }
 
 .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: #cedce7;
     background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
     background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
@@ -65,13 +69,6 @@
         -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
-.back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
 .inner {
     -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
     transform: translateY(-50%) translateZ(60px) scale(0.94);
@@ -86,6 +83,14 @@
     -webkit-perspective: inherit;
     perspective: inherit;
     z-index: 2;
+
+    a {
+        padding: 8px 18px;
+        background: cedce7;
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+    }
 }
 
 .container .back {

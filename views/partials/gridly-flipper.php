@@ -11,15 +11,15 @@ defined( 'ABSPATH' ) || exit;
 
 <article class="gridly-flipper">
 	<div class="container">
-		<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+		<div class="front" style="background-image: url( <?php has_post_thumbnail( get_the_ID() ) ? the_post_thumbnail_url( 'full' ) : ''; ?> );">
 			<div class="inner">
-				<p>Diligord</p>
-	<span>Lorem ipsum</span>
+				<h3><?php echo wp_trim_words( get_the_title(), 3 ); ?></h3>
+	<span><?php the_time( 'F jS, Y' ); ?></span>
 			</div>
 		</div>
 		<div class="back">
 			<div class="inner">
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+				<a href="<?php the_permalink(); ?>">Read more</a>
 			</div>
 		</div>
 	</div>

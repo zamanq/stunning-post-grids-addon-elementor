@@ -188,8 +188,10 @@ class Gridly_Widget extends Widget_Base {
                 'type'        => Controls_Manager::SELECT,
                 'default'     => 'grid',
                 'options'     => array(
-					'grid'     => __( 'Grid', 'gridly' ),
-					'flipper'  => __( 'Flipping Grid', 'gridly' ),
+					'grid'      => __( 'Smart Grid', 'gridly' ),
+					'flipper'   => __( '3D Smart Grid', 'gridly' ),
+					'smartcard' => __( 'Smart Card', 'gridly' ),
+					'appcard'   => __( 'App Card', 'gridly' ),
 				),
 			)
         );
