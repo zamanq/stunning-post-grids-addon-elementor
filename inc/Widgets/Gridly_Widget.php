@@ -199,6 +199,44 @@ class Gridly_Widget extends Widget_Base {
 					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}50px; height: {{VALUE}}50px;',
 				),
+				'condition'   => array(
+					'gridly_post_layout!' => 'smartcard'
+				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_columns_smartcard', 
+			array(
+                'label'       => __( 'Columns Per Row', 'gridly' ),
+                'type'        => Controls_Manager::SELECT,
+                'default'     => 4,
+                'options'     => array(
+					2 => __( 'Two', 'gridly' ),
+					3 => __( 'Three', 'gridly' ),
+					4 => __( 'Four', 'gridly' ),
+				),
+				'selectors'   => array(
+					'(desktop){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
+					'(tablet){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat(2, 1fr);',
+					'(mobile){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat(1, 1fr);',
+				),
+				'condition'   => array(
+					'gridly_post_layout' => 'smartcard'
+				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_readmore', 
+			array(
+                'label'       => __( 'Read More Text', 'gridly' ),
+                'type'        => Controls_Manager::TEXT,
+				'default'     => __( 'Read More', 'gridly' ),
+				'placeholder' => __( 'Add read more text', 'gridly' ),
+				'condition'   => array(
+					'gridly_post_layout' => array( 'flipper', 'smartcard' ),
+				),
 			)
         );
 

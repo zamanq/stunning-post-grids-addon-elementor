@@ -8,9 +8,10 @@
 defined( 'ABSPATH' ) || exit;
 
 // Extract each setting into variables.
-$show_title   = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
-$show_image   = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
-$title_length = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
+$show_title    = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
+$show_image    = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
+$title_length  = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
+$readmore_text = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_field( $settings['gridly_post_readmore'] ) : __( 'Read More', 'gridly' );
 ?>
 
 <article class="gridly-flipper">
@@ -25,7 +26,7 @@ $title_length = isset( $settings['gridly_post_title_length'] ) ? absint( $settin
 		</div>
 		<div class="back">
 			<div class="inner">
-				<a href="<?php the_permalink(); ?>"><?php _e( 'Read more', 'gridly' ); ?></a>
+				<a href="<?php the_permalink(); ?>"><?php echo esc_html( $readmore_text ); ?></a>
 			</div>
 		</div>
 	</div>

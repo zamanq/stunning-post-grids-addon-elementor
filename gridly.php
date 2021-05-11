@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name:       Gridly
- * Plugin URI:        https://www.xoxodev.com/elementor-api-plus
- * Description:       Gridly for Elementor. Prettify your Blog and Custom Post Types.
+ * Plugin URI:        https://www.xoxodev.com/gridly
+ * Description:       Gridly for Elementor. Prettify your Blog and Custom Post Types. Let the others wonder while you beautify yours posts instantly.
  * Version:           1.0.0
  * Author:            XoXo Dev
  * Author URI:        https://www.xoxodev.com/
  * Text Domain:       gridly
  * Requires at least: 5.6
- * Tested up to:      5.7
+ * Tested up to:      5.7.1
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  *
@@ -44,4 +44,5 @@ function gridly_activated() {
 	}
 
 	update_option( 'gridly_version', GRIDLY_VERSION );
+	update_option( 'gridly_license', GRIDLY_LICENSE );
 }
