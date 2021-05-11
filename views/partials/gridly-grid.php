@@ -11,8 +11,8 @@ defined( 'ABSPATH' ) || exit;
 $show_title     = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
 $show_image     = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
 $show_excerpt   = isset( $settings['gridly_post_excerpt_toggle'] ) ? sanitize_text_field( $settings['gridly_post_excerpt_toggle'] ) : 'yes';
+$title_length   = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
 $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $settings['gridly_post_excerpt_length'] ) : 20;
-
 ?>
 
 <article class="grid">
@@ -33,7 +33,7 @@ $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $se
     <div class="grid-info">
         <span class="grid-category"><?php the_category( ', ', '', get_the_ID() ) ?></span>
         <?php if ( 'yes' === $show_title ) : ?>
-            <h3 class="grid-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="grid-title"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), $title_length ); ?></a></h3>
         <?php endif; ?>
 
         <?php if ( 'yes' === $show_excerpt ) : ?>

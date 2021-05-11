@@ -158,18 +158,6 @@ class Gridly_Widget extends Widget_Base {
 			)
         );
 
-		$this->add_control(
-            'gridly_post_pagination_toggle', 
-			array(
-                'label'        => __( 'Show Pagination?', 'gridly' ),
-                'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
-				'return_value' => 'yes',
-				'default'      => 'yes',
-			)
-        );
-
 		$this->end_controls_section();
 
 		// Style Controls.
@@ -209,6 +197,7 @@ class Gridly_Widget extends Widget_Base {
 				),
 				'selectors'   => array(
 					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}50px; height: {{VALUE}}50px;',
 				),
 			)
         );
@@ -222,6 +211,18 @@ class Gridly_Widget extends Widget_Base {
 				'label_off'    => __( 'No', 'gridly' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_title_length', 
+			array(
+                'label'   => __( 'Title Length', 'gridly' ),
+                'type'    => Controls_Manager::NUMBER,
+                'default' => 3,
+				'condition' => array(
+					'gridly_post_title_toggle' => 'yes',
+				),
 			)
         );
 
@@ -246,6 +247,9 @@ class Gridly_Widget extends Widget_Base {
 				'label_off'    => __( 'No', 'gridly' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
+				'condition'     => array(
+					'gridly_post_layout!' => 'appcard',
+				),
 			)
         );
 
@@ -257,7 +261,20 @@ class Gridly_Widget extends Widget_Base {
                 'default' => 20,
 				'condition' => array(
 					'gridly_post_excerpt_toggle' => 'yes',
+					'gridly_post_layout!' => 'appcard',
 				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_pagination_toggle', 
+			array(
+                'label'        => __( 'Show Pagination?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
 			)
         );
 
