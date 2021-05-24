@@ -228,6 +228,41 @@ class Gridly_Widget extends Widget_Base {
         );
 
 		$this->add_control(
+            'gridly_post_columns_gap', 
+			array(
+                'label'       => __( 'Columns Gap', 'gridly' ),
+                'type'        => Controls_Manager::NUMBER,
+                'default'     => 6,
+				'selectors'   => array(
+					'{{WRAPPER}} .gridly-grids .gridly-flipper' => 'margin: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'margin: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .grid' => 'margin-right: {{VALUE}}px; margin-bottom: {{VALUE}}px;',
+					'{{WRAPPER}} .smart-card-wrapper' => 'grid-gap: {{VALUE}}px;',
+				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_columns_border_radius', 
+			array(
+                'label'       => __( 'Border Radius', 'gridly' ),
+                'type'        => Controls_Manager::NUMBER,
+                'default'     => 15,
+				'selectors'   => array(
+					'{{WRAPPER}} .gridly-grids .grid' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-flipper .container .front' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-flipper .container .front::after' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-flipper .container .back' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card .card-image' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card .card-image a' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card .card-image a img' => 'border-radius: {{VALUE}}px;',
+					'{{WRAPPER}} .smart-card-wrapper .gridly-smart-card' => 'border-radius: {{VALUE}}px;',
+				),
+			)
+        );
+
+		$this->add_control(
             'gridly_post_readmore', 
 			array(
                 'label'       => __( 'Read More Text', 'gridly' ),

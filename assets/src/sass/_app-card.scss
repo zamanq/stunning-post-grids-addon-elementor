@@ -1,7 +1,5 @@
 .gridly-app-card {
     position: relative;
-    margin: 10px;
-    border-radius: 40px;
     box-shadow: 5px 5px 40px 2px rgba(0, 0, 0, 0.2),
         -5px -5px 40px 2px rgba(0, 0, 0, 0.18);
     cursor: pointer;
@@ -45,7 +43,7 @@
     }
 
     &:hover {
-        transform: scale(0.9, 0.9);
+        transform: scale(0.95, 0.95);
         box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
             -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
     }
