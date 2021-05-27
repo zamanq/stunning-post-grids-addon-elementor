@@ -197,6 +197,7 @@ class Gridly_Widget extends Widget_Base {
 				),
 				'selectors'   => array(
 					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
+					'{{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: {{VALUE}}1%;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}50px; height: {{VALUE}}50px;',
 				),
 				'condition'   => array(
