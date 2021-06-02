@@ -10,6 +10,7 @@ namespace Gridly\Widgets;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
 use Gridly\Traits\Helpers;
 use Gridly\Traits\Templates;
 
@@ -172,10 +173,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_layout', 
 			array(
-                'label'       => __( 'Gridly Layout', 'gridly' ),
-                'type'        => Controls_Manager::SELECT,
-                'default'     => 'grid',
-                'options'     => array(
+                'label'   => __( 'Gridly Layout', 'gridly' ),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'grid',
+                'options' => array(
 					'grid'      => __( 'Smart Grid', 'gridly' ),
 					'flipper'   => __( '3D Smart Grid', 'gridly' ),
 					'smartcard' => __( 'Smart Card', 'gridly' ),
@@ -187,20 +188,20 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns', 
 			array(
-                'label'       => __( 'Columns Per Row', 'gridly' ),
-                'type'        => Controls_Manager::SELECT,
-                'default'     => 3,
-                'options'     => array(
+                'label'     => __( 'Columns Per Row', 'gridly' ),
+                'type'      => Controls_Manager::SELECT,
+                'default'   => 3,
+                'options'   => array(
 					4 => __( 'Two', 'gridly' ),
 					3 => __( 'Three', 'gridly' ),
 					2 => __( 'Four', 'gridly' ),
 				),
-				'selectors'   => array(
+				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
 					'{{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: {{VALUE}}1%;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}50px; height: {{VALUE}}50px;',
 				),
-				'condition'   => array(
+				'condition' => array(
 					'gridly_post_layout!' => 'smartcard'
 				),
 			)
@@ -209,20 +210,20 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns_smartcard', 
 			array(
-                'label'       => __( 'Columns Per Row', 'gridly' ),
-                'type'        => Controls_Manager::SELECT,
-                'default'     => 4,
-                'options'     => array(
+                'label'     => __( 'Columns Per Row', 'gridly' ),
+                'type'      => Controls_Manager::SELECT,
+                'default'   => 4,
+                'options'   => array(
 					2 => __( 'Two', 'gridly' ),
 					3 => __( 'Three', 'gridly' ),
 					4 => __( 'Four', 'gridly' ),
 				),
-				'selectors'   => array(
+				'selectors' => array(
 					'(desktop){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
 					'(tablet){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat(2, 1fr);',
 					'(mobile){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat(1, 1fr);',
 				),
-				'condition'   => array(
+				'condition' => array(
 					'gridly_post_layout' => 'smartcard'
 				),
 			)
@@ -231,10 +232,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns_gap', 
 			array(
-                'label'       => __( 'Columns Gap', 'gridly' ),
-                'type'        => Controls_Manager::NUMBER,
-                'default'     => 6,
-				'selectors'   => array(
+                'label'     => __( 'Columns Gap', 'gridly' ),
+                'type'      => Controls_Manager::NUMBER,
+                'default'   => 6,
+				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .gridly-flipper' => 'margin: {{VALUE}}px;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'margin: {{VALUE}}px;',
 					'{{WRAPPER}} .gridly-grids .grid' => 'margin-right: {{VALUE}}px; margin-bottom: {{VALUE}}px;',
@@ -246,10 +247,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns_border_radius', 
 			array(
-                'label'       => __( 'Border Radius', 'gridly' ),
-                'type'        => Controls_Manager::NUMBER,
-                'default'     => 15,
-				'selectors'   => array(
+                'label'     => __( 'Border Radius', 'gridly' ),
+                'type'      => Controls_Manager::NUMBER,
+                'default'   => 15,
+				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .grid' => 'border-radius: {{VALUE}}px;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'border-radius: {{VALUE}}px;',
 					'{{WRAPPER}} .gridly-grids .gridly-flipper .container .front' => 'border-radius: {{VALUE}}px;',
@@ -291,14 +292,23 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_title_length', 
 			array(
-                'label'   => __( 'Title Length', 'gridly' ),
-                'type'    => Controls_Manager::NUMBER,
-                'default' => 3,
+                'label'     => __( 'Title Length', 'gridly' ),
+                'type'      => Controls_Manager::NUMBER,
+                'default'   => 3,
 				'condition' => array(
 					'gridly_post_title_toggle' => 'yes',
 				),
 			)
         );
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'gridly_post_title_typography',
+				'label'    => __( 'Title Typography', 'gridly' ),
+				'selector' => '{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .title, {{WRAPPER}} .gridly-grids .gridly-app-card .card-title h3 a, {{WRAPPER}} .gridly-grids .grid .grid-info .grid-title, {{WRAPPER}} .gridly-grids .gridly-flipper .container .front .inner .title',
+			)
+		);
 
 		$this->add_control(
             'gridly_post_image_toggle', 
@@ -321,8 +331,8 @@ class Gridly_Widget extends Widget_Base {
 				'label_off'    => __( 'No', 'gridly' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
-				'condition'     => array(
-					'gridly_post_layout!' => 'appcard',
+				'condition'    => array(
+					'gridly_post_layout!' => array( 'flipper', 'appcard' ),
 				),
 			)
         );
@@ -330,12 +340,12 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_excerpt_length', 
 			array(
-                'label'   => __( 'Excerpt Length', 'gridly' ),
-                'type'    => Controls_Manager::NUMBER,
-                'default' => 20,
+                'label'     => __( 'Excerpt Length', 'gridly' ),
+                'type'      => Controls_Manager::NUMBER,
+                'default'   => 20,
 				'condition' => array(
 					'gridly_post_excerpt_toggle' => 'yes',
-					'gridly_post_layout!' => 'appcard',
+					'gridly_post_layout!' => array( 'flipper', 'appcard' ),
 				),
 			)
         );

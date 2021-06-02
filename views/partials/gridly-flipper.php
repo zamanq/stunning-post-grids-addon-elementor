@@ -19,7 +19,7 @@ $readmore_text = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_fiel
 		<div class="front" style="background-image: url( <?php has_post_thumbnail( get_the_ID() ) && 'yes' === $show_image ? the_post_thumbnail_url( 'full' ) : ''; ?> );">
 			<div class="inner">
 				<?php if ( 'yes' === $show_title ) : ?>
-					<h3><?php echo wp_trim_words( get_the_title(), $title_length ); ?></h3>
+					<h3 class="title"><?php echo wp_trim_words( get_the_title(), $title_length ); ?></h3>
 				<?php endif; ?>
 				<span><?php the_time( 'F jS, Y' ); ?></span>
 			</div>
