@@ -9,6 +9,8 @@ defined( 'ABSPATH' ) || exit;
 
 // Extract each setting into variables.
 $show_title     = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
+$show_author    = isset( $settings['gridly_post_author_toggle'] ) ? sanitize_text_field( $settings['gridly_post_author_toggle'] ) : 'yes';
+$show_taxonomy  = isset( $settings['gridly_post_taxonomy_toggle'] ) ? sanitize_text_field( $settings['gridly_post_taxonomy_toggle'] ) : 'yes';
 $show_image     = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
 $show_excerpt   = isset( $settings['gridly_post_excerpt_toggle'] ) ? sanitize_text_field( $settings['gridly_post_excerpt_toggle'] ) : 'yes';
 $title_length   = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
@@ -31,16 +33,19 @@ $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $se
     <?php endif; ?>
 
     <div class="grid-info">
-        <span class="grid-category"><?php the_category( ', ', '', get_the_ID() ) ?></span>
+        <?php if ( 'yes' === $show_taxonomy ) : ?>
+            <span class="grid-category"><?php the_category( ', ', '', get_the_ID() ) ?></span>
+        <?php endif; ?>
         <?php if ( 'yes' === $show_title ) : ?>
             <h3 class="grid-title"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), $title_length ); ?></a></h3>
         <?php endif; ?>
 
         <?php if ( 'yes' === $show_excerpt ) : ?>
-            <p><?php echo wp_trim_words( get_the_excerpt(), $excerpt_length ); ?></p>
+            <p class="grid-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $excerpt_length ); ?></p>
         <?php endif; ?>
-
-        <span class="grid-by"><?php _e( 'by ', 'gridly' ); the_author_link(); ?></span>
+        <?php if ( 'yes' === $show_author ) : ?>
+            <span class="grid-by"><?php _e( 'by ', 'gridly' ); the_author(); ?></span>
+        <?php endif; ?>
     </div>
 </article>
   

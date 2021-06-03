@@ -10,6 +10,7 @@ namespace Gridly\Widgets;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
+use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Typography;
 use Gridly\Traits\Helpers;
 use Gridly\Traits\Templates;
@@ -278,6 +279,36 @@ class Gridly_Widget extends Widget_Base {
         );
 
 		$this->add_control(
+            'gridly_post_taxonomy_toggle', 
+			array(
+                'label'        => __( 'Show Taxonomy?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+				'condition'    => array(
+					'gridly_post_layout' => 'grid',
+				),
+			)
+        );
+
+		$this->add_control(
+            'gridly_post_author_toggle', 
+			array(
+                'label'        => __( 'Show Author?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+				'condition'    => array(
+					'gridly_post_layout' => 'grid',
+				),
+			)
+        );
+
+		$this->add_control(
             'gridly_post_title_toggle', 
 			array(
                 'label'        => __( 'Show Title?', 'gridly' ),
@@ -304,9 +335,12 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
-				'name'     => 'gridly_post_title_typography',
-				'label'    => __( 'Title Typography', 'gridly' ),
-				'selector' => '{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .title, {{WRAPPER}} .gridly-grids .gridly-app-card .card-title h3 a, {{WRAPPER}} .gridly-grids .grid .grid-info .grid-title, {{WRAPPER}} .gridly-grids .gridly-flipper .container .front .inner .title',
+				'name'      => 'gridly_post_title_typography',
+				'label'     => __( 'Title Typography', 'gridly' ),
+				'selector'  => '{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .title, {{WRAPPER}} .gridly-grids .gridly-app-card .card-title h3 a, {{WRAPPER}} .gridly-grids .grid .grid-info .grid-title, {{WRAPPER}} .gridly-grids .gridly-flipper .container .front .inner .title',
+				'condition' => array(
+					'gridly_post_title_toggle' => 'yes',
+				),
 			)
 		);
 
@@ -350,6 +384,19 @@ class Gridly_Widget extends Widget_Base {
 			)
         );
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'      => 'gridly_post_excerpt_typography',
+				'label'     => __( 'Excerpt Typography', 'gridly' ),
+				'selector'  => '{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .copy, {{WRAPPER}} .gridly-grids .grid .grid-info .grid-excerpt',
+				'condition' => array(
+					'gridly_post_excerpt_toggle' => 'yes',
+					'gridly_post_layout!' => array( 'flipper', 'appcard' ),
+				),
+			)
+		);
+
 		$this->add_control(
             'gridly_post_pagination_toggle', 
 			array(
@@ -361,6 +408,67 @@ class Gridly_Widget extends Widget_Base {
 				'default'      => 'yes',
 			)
         );
+
+		$this->end_controls_section();
+
+		// Colors section.
+		$this->start_controls_section(
+			'gridly_color_section',
+			array(
+				'label' => __( 'Colors', 'gridly' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'gridly_title_color',
+			array(
+				'label'     => __( 'Title Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card .card-title h3 a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .gridly-grids .grid .grid-info .grid-title a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .gridly-grids .gridly-flipper .container .front .inner .title' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'gridly_excerpt_color',
+			array(
+				'label'     => __( 'Excerpt Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .copy' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .gridly-grids .grid .grid-info .grid-excerpt' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'gridly_reading_time_color',
+			array(
+				'label'     => __( 'Reading Time Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .gridly-grids .grid .grid-info-hover .grid-clock-info .grid-clock' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .gridly-grids .grid .grid-info-hover .grid-clock-info .grid-time' => 'color: {{VALUE}}',
+				),
+			)
+		);
 
 		$this->end_controls_section();
 
