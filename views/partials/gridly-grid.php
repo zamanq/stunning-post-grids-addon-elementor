@@ -8,6 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Extract each setting into variables.
+$post_type      = isset( $settings['gridly_post_type'] ) ? sanitize_text_field( $settings['gridly_post_type'] ) : 'post';
 $show_title     = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
 $show_author    = isset( $settings['gridly_post_author_toggle'] ) ? sanitize_text_field( $settings['gridly_post_author_toggle'] ) : 'yes';
 $show_taxonomy  = isset( $settings['gridly_post_taxonomy_toggle'] ) ? sanitize_text_field( $settings['gridly_post_taxonomy_toggle'] ) : 'yes';
@@ -15,6 +16,9 @@ $show_image     = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text
 $show_excerpt   = isset( $settings['gridly_post_excerpt_toggle'] ) ? sanitize_text_field( $settings['gridly_post_excerpt_toggle'] ) : 'yes';
 $title_length   = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
 $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $settings['gridly_post_excerpt_length'] ) : 20;
+
+$taxonomies     = get_object_taxonomies( $post_type, 'names' );
+$taxonomy       = ! empty( $taxonomies ) ? $taxonomies[0] : 'category';
 ?>
 
 <article class="grid">
@@ -34,7 +38,7 @@ $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $se
 
     <div class="grid-info">
         <?php if ( 'yes' === $show_taxonomy ) : ?>
-            <span class="grid-category"><?php the_category( ', ', '', get_the_ID() ) ?></span>
+            <span class="grid-category"><?php the_terms( get_the_ID(), $taxonomy, '', ', ' ) ?></span>
         <?php endif; ?>
         <?php if ( 'yes' === $show_title ) : ?>
             <h3 class="grid-title"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), $title_length ); ?></a></h3>
