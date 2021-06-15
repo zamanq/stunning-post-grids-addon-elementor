@@ -470,6 +470,54 @@ class Gridly_Widget extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'gridly_pagination_color',
+			array(
+				'label'     => __( 'Pagination Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#302c2c',
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .gridly-pagination .page-numbers' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'gridly_pagination_current_color',
+			array(
+				'label'     => __( 'Pagination Current Page Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#ffffff',
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .gridly-pagination .current' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'gridly_pagination_current_bg_color',
+			array(
+				'label'     => __( 'Pagination Current Page BG Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#2165e4',
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .gridly-pagination .current' => 'background: {{VALUE}}',
+				),
+			)
+		);
+
 		$this->end_controls_section();
 
 	}
