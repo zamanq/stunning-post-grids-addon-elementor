@@ -30,7 +30,7 @@ $taxonomy       = ! empty( $taxonomies ) ? $taxonomies[0] : 'category';
     </div>
 
     <?php if ( 'yes' === $show_image && has_post_thumbnail( get_the_ID() ) ) : ?>
-        <div class="grid-img" style="background-image:url('<?php the_post_thumbnail_url( 'medium' ); ?>')"></div>
+        <div class="grid-img" style="background-image:url('<?php the_post_thumbnail_url( 'full' ); ?>')"></div>
         <a href="<?php the_permalink(); ?>" class="grid_link">
             <div class="grid-img-hover" style="background-image:url('<?php the_post_thumbnail_url( 'full' ); ?>')"></div>
         </a>
@@ -48,7 +48,7 @@ $taxonomy       = ! empty( $taxonomies ) ? $taxonomies[0] : 'category';
             <p class="grid-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $excerpt_length ); ?></p>
         <?php endif; ?>
         <?php if ( 'yes' === $show_author ) : ?>
-            <span class="grid-by"><?php _e( 'by ', 'gridly' ); the_author(); ?></span>
+            <span class="grid-by"><?php _e( 'by ', 'gridly' ); the_author_link(); ?></span>
         <?php endif; ?>
     </div>
 </article>

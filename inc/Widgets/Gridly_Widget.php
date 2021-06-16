@@ -199,7 +199,9 @@ class Gridly_Widget extends Widget_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
-					'{{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: {{VALUE}}1%;',
+					'(desktop){{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: {{VALUE}}1%;',
+					'(tablet){{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: 45%;',
+					'(mobile){{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: 100%;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}50px; height: {{VALUE}}50px;',
 				),
 				'condition' => array(
@@ -357,6 +359,21 @@ class Gridly_Widget extends Widget_Base {
         );
 
 		$this->add_control(
+            'gridly_post_date_toggle', 
+			array(
+                'label'        => __( 'Show Date?', 'gridly' ),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __( 'Yes', 'gridly' ),
+				'label_off'    => __( 'No', 'gridly' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+				'condition'    => array(
+					'gridly_post_layout' => 'flipper',
+				)
+			)
+        );
+
+		$this->add_control(
             'gridly_post_excerpt_toggle', 
 			array(
                 'label'        => __( 'Show Excerpt?', 'gridly' ),
@@ -429,6 +446,9 @@ class Gridly_Widget extends Widget_Base {
 					'type'  => Color::get_type(),
 					'value' => Color::COLOR_1,
 				),
+				'condition' => array(
+					'gridly_post_title_toggle' => 'yes',
+				),
 				'selectors' => array(
 					'{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .title' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card .card-title h3 a' => 'color: {{VALUE}}',
@@ -446,6 +466,10 @@ class Gridly_Widget extends Widget_Base {
 				'scheme'    => array(
 					'type'  => Color::get_type(),
 					'value' => Color::COLOR_1,
+				),
+				'condition' => array(
+					'gridly_post_excerpt_toggle' => 'yes',
+					'gridly_post_layout' => array( 'grid', 'smartcard' ),
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .copy' => 'color: {{VALUE}}',
@@ -480,6 +504,9 @@ class Gridly_Widget extends Widget_Base {
 					'type'  => Color::get_type(),
 					'value' => Color::COLOR_1,
 				),
+				'condition' => array(
+					'gridly_post_pagination_toggle' => 'yes',
+				),
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-pagination .page-numbers' => 'color: {{VALUE}}',
 				),
@@ -495,6 +522,9 @@ class Gridly_Widget extends Widget_Base {
 				'scheme'    => array(
 					'type'  => Color::get_type(),
 					'value' => Color::COLOR_1,
+				),
+				'condition' => array(
+					'gridly_post_pagination_toggle' => 'yes',
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-pagination .current' => 'color: {{VALUE}}',
@@ -512,8 +542,31 @@ class Gridly_Widget extends Widget_Base {
 					'type'  => Color::get_type(),
 					'value' => Color::COLOR_1,
 				),
+				'condition' => array(
+					'gridly_post_pagination_toggle' => 'yes',
+				),
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-pagination .current' => 'background: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'gridly_post_date_color',
+			array(
+				'label'     => __( 'Date Color', 'gridly' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#ffffff',
+				'scheme'    => array(
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
+				),
+				'condition' => array(
+					'gridly_post_layout' => 'flipper',
+					'gridly_post_date_toggle' => 'yes',
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .gridly-grids .gridly-flipper .container .front .inner .date' => 'color: {{VALUE}}',
 				),
 			)
 		);
