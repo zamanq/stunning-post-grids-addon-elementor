@@ -21,10 +21,8 @@ final class Init {
 	 */
 	public static function get_services() {
 		return array(
-			Ajax\Ajax::class,
 			Setup\Setup::class,
 			Setup\Enqueue::class,
-			Admin\Dashboard::class,
 		);
 	}
 

@@ -14,7 +14,5 @@ mix.autoload({
 
 // Compile assets
 mix.sass('assets/src/sass/styles.scss', 'assets/css')
-   .sass('inc/Admin/react/sass/dashboard.scss', 'assets/css')
-   .react('inc/Admin/react/src/dashboard.js', 'assets/js')
 
 mix.disableNotifications();

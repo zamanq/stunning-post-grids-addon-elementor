@@ -268,6 +268,36 @@ class Gridly_Widget extends Widget_Base {
         );
 
 		$this->add_control(
+			'gridly_post_content_align',
+			array(
+				'label'     => __( 'Content Alignment', 'gridly' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => array(
+					'left'   => array(
+						'title' => __( 'Left', 'gridly' ),
+						'icon'  => 'fa fa-align-left',
+					),
+					'center' => array(
+						'title' => __( 'Center', 'gridly' ),
+						'icon'  => 'fa fa-align-center',
+					),
+					'right'  => array(
+						'title' => __( 'Right', 'gridly' ),
+						'icon'  => 'fa fa-align-right',
+					),
+				),
+				'default'   => 'center',
+				'toggle'    => true,
+				'condition' => array(
+					'gridly_post_layout' => 'grid',
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .gridly-grids .grid .grid-info' => 'text-align: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
             'gridly_post_readmore', 
 			array(
                 'label'       => __( 'Read More Text', 'gridly' ),
@@ -486,6 +516,9 @@ class Gridly_Widget extends Widget_Base {
 				'scheme'    => array(
 					'type'  => Color::get_type(),
 					'value' => Color::COLOR_1,
+				),
+				'condition' => array(
+					'gridly_post_layout' => 'grid',
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .grid .grid-info-hover .grid-clock-info .grid-clock' => 'fill: {{VALUE}}',
