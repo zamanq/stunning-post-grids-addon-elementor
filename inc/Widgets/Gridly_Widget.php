@@ -613,9 +613,9 @@ class Gridly_Widget extends Widget_Base {
 	 */
 	protected function render() {
 
-		$settings = $this->get_settings();
+		$settings = apply_filters( 'gridly_settings_args', $this->get_settings() );
 
-		Templates::render( $settings );		
+		Templates::render( $settings );
 
 	}
 }
