@@ -45,7 +45,7 @@ final class Init {
 	 *
 	 * @return class instance of the class
 	 */
-	private static function instantiate( $class ) {
+	private static function instantiate( string $class ) {
 		return new $class();
 	}
 }

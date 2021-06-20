@@ -59,15 +59,6 @@ class Gridly_Widget extends Widget_Base {
 	}
 
 	/**
-	 * Gridly help URL
-	 *
-	 * @return string $url
-	 */
-	public function get_custom_help_url() {
-        return 'https://www.xoxodev.com/gridly';
-    }
-
-	/**
 	 * Register Gridly widget controls.
 	 */
 	protected function _register_controls() {

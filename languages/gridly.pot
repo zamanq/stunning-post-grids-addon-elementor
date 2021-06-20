@@ -1,0 +1,267 @@
+# Copyright (C) 2021 Zaman.Q
+# This file is distributed under the same license as the Gridly plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Gridly 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gridly\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-06-20T16:01:38+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: gridly\n"
+
+#. Plugin Name of the plugin
+#: inc/Setup/Setup.php:65
+#: inc/Setup/Setup.php:108
+#: inc/Setup/Setup.php:126
+#: inc/Setup/Setup.php:145
+#: inc/Widgets/Gridly_Widget.php:40
+msgid "Gridly"
+msgstr ""
+
+#. Description of the plugin
+msgid "Gridly for Elementor. Prettify your Blog and Custom Post Types. Let the others wonder while you beautify yours posts instantly."
+msgstr ""
+
+#. Author of the plugin
+msgid "Zaman.Q"
+msgstr ""
+
+#. translators: 1: Plugin name 2: Elementor
+#: inc/Setup/Setup.php:107
+msgid "%1$s requires %2$s to be installed and activated."
+msgstr ""
+
+#: inc/Setup/Setup.php:109
+#: inc/Setup/Setup.php:127
+msgid "Elementor"
+msgstr ""
+
+#. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
+#. translators: 1: Plugin name 2: PHP 3: Required PHP version
+#: inc/Setup/Setup.php:125
+#: inc/Setup/Setup.php:144
+msgid "%1$s requires %2$s version %3$s or greater."
+msgstr ""
+
+#: inc/Setup/Setup.php:146
+msgid "PHP"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:70
+msgid "Main Query"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:78
+msgid "Post Type"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:112
+msgid "Author"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:123
+msgid "Order By"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:133
+msgid "Order"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:137
+msgid "Ascending"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:138
+msgid "Descending"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:146
+msgid "Posts Per Page"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:160
+msgid "Layouts"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:168
+msgid "Gridly Layout"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:172
+msgid "Smart Grid"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:173
+msgid "3D Smart Grid"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:174
+msgid "Smart Card"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:175
+msgid "App Card"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:183
+#: inc/Widgets/Gridly_Widget.php:207
+msgid "Columns Per Row"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:187
+#: inc/Widgets/Gridly_Widget.php:211
+msgid "Two"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:188
+#: inc/Widgets/Gridly_Widget.php:212
+msgid "Three"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:189
+#: inc/Widgets/Gridly_Widget.php:213
+msgid "Four"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:229
+msgid "Columns Gap"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:244
+msgid "Border Radius"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:264
+msgid "Content Alignment"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:268
+msgid "Left"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:272
+msgid "Center"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:276
+msgid "Right"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:294
+msgid "Read More Text"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:296
+#: views/partials/gridly-flipper.php:15
+#: views/partials/gridly-smartcard.php:16
+msgid "Read More"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:297
+msgid "Add read more text"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:307
+msgid "Show Taxonomy?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:309
+#: inc/Widgets/Gridly_Widget.php:324
+#: inc/Widgets/Gridly_Widget.php:339
+#: inc/Widgets/Gridly_Widget.php:375
+#: inc/Widgets/Gridly_Widget.php:387
+#: inc/Widgets/Gridly_Widget.php:402
+#: inc/Widgets/Gridly_Widget.php:443
+msgid "Yes"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:310
+#: inc/Widgets/Gridly_Widget.php:325
+#: inc/Widgets/Gridly_Widget.php:340
+#: inc/Widgets/Gridly_Widget.php:376
+#: inc/Widgets/Gridly_Widget.php:388
+#: inc/Widgets/Gridly_Widget.php:403
+#: inc/Widgets/Gridly_Widget.php:444
+msgid "No"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:322
+msgid "Show Author?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:337
+msgid "Show Title?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:349
+msgid "Title Length"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:362
+msgid "Title Typography"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:373
+msgid "Show Image?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:385
+msgid "Show Date?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:400
+msgid "Show Excerpt?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:415
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:429
+msgid "Excerpt Typography"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:441
+msgid "Show Pagination?"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:456
+msgid "Colors"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:464
+msgid "Title Color"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:485
+msgid "Excerpt Color"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:505
+msgid "Reading Time Color"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:524
+msgid "Pagination Color"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:543
+msgid "Pagination Current Page Color"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:562
+msgid "Pagination Current Page BG Color"
+msgstr ""
+
+#: inc/Widgets/Gridly_Widget.php:581
+msgid "Date Color"
+msgstr ""
+
+#: views/partials/gridly-grid.php:51
+msgid "by "
+msgstr ""
