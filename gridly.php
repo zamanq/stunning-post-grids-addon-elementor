@@ -8,6 +8,7 @@
  * Contributors:      zamanq
  * Requires at least: 5.6
  * Tested up to:      5.7.2
+ * Tags:              content
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       gridly

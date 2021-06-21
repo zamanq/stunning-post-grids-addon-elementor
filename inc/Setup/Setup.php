@@ -42,6 +42,11 @@ class Setup {
      * On plugins loaded
      */
     public function on_plugins_loaded() {
+
+		// Load plugin's textdomain.
+		load_plugin_textdomain( 'gridly' );
+
+		// Check compatibility and then hook in.
         if ( $this->is_compatible() ) {
             add_action( 'elementor/init', array( $this, 'register_widgets' ) );
 			add_action( 'elementor/elements/categories_registered', array( $this, 'add_gridly_widget_category' ) );

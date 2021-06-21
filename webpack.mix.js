@@ -13,6 +13,6 @@ mix.autoload({
 });
 
 // Compile assets
-mix.sass('assets/src/sass/styles.scss', 'assets/css')
+mix.sass('assets/src/sass/styles.scss', 'assets/css/styles.min.css')
 
 mix.disableNotifications();

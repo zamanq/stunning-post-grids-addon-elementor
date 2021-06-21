@@ -46,7 +46,7 @@ class Gridly_Widget extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-gallery-grid';
+		return 'eicon-apps';
 	}
 
 	/**
