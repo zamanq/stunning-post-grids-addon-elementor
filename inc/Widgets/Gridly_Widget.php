@@ -2,18 +2,18 @@
 /**
  * Handles registering and rendering of Gridly_Widget
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
-namespace Gridly\Widgets;
+namespace Gridly_Elementor\Widgets;
 
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Typography;
-use Gridly\Traits\Helpers;
-use Gridly\Traits\Templates;
+use Gridly_Elementor\Traits\Helpers;
+use Gridly_Elementor\Traits\Templates;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -28,7 +28,7 @@ class Gridly_Widget extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gridly';
+		return 'gridly-elementor';
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Gridly_Widget extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Gridly', 'gridly' );
+		return __( 'Gridly', 'gridly-elementor' );
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Gridly_Widget extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return array( 'gridly' );
+		return array( 'gridly-elementor' );
 	}
 
 	/**
@@ -67,7 +67,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'gridly_content_section',
 			array(
-				'label' => __( 'Main Query', 'gridly' ),
+				'label' => __( 'Main Query', 'gridly-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -75,7 +75,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_post_type',
 			array(
-				'label'   => __( 'Post Type', 'gridly' ),
+				'label'   => __( 'Post Type', 'gridly-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'post',
 				'options' => Helpers::get_all_post_types(),
@@ -94,7 +94,7 @@ class Gridly_Widget extends Widget_Base {
             $this->add_control(
                 $taxonomy . '_ids',
                 array(
-                    'label'       => __( $object->label, 'gridly' ),
+                    'label'       => __( $object->label, 'gridly-elementor' ),
                     'type'        => Controls_Manager::SELECT2,
                     'multiple'    => true,
                     'object_type' => $taxonomy,
@@ -109,7 +109,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_authors', 
 			array(
-                'label'    => __( 'Author', 'gridly' ),
+                'label'    => __( 'Author', 'gridly-elementor' ),
                 'type'     => Controls_Manager::SELECT2,
                 'multiple' => true,
                 'default'  => array(),
@@ -120,7 +120,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_orderby', 
 			array(
-                'label'   => __( 'Order By', 'gridly' ),
+                'label'   => __( 'Order By', 'gridly-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'date',
                 'options' => Helpers::get_orderby_filter(),
@@ -130,12 +130,12 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_order', 
 			array(
-                'label'   => __( 'Order', 'gridly' ),
+                'label'   => __( 'Order', 'gridly-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'desc',
                 'options' => array(
-					'asc'  => __( 'Ascending', 'gridly' ),
-					'desc' => __( 'Descending', 'gridly' ),
+					'asc'  => __( 'Ascending', 'gridly-elementor' ),
+					'desc' => __( 'Descending', 'gridly-elementor' ),
 				),
 			)
         );
@@ -143,11 +143,11 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_posts_per_page', 
 			array(
-                'label'   => __( 'Posts Per Page', 'gridly' ),
+                'label'   => __( 'Posts Per Page', 'gridly-elementor' ),
                 'type'    => Controls_Manager::NUMBER,
-                'default' => 3,
+                'default' => 6,
 				'min'     => 1,
-				'max'     => 150   
+				'max'     => 150
 			)
         );
 
@@ -157,7 +157,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'gridly_style_section',
 			array(
-				'label' => __( 'Layouts', 'gridly' ),
+				'label' => __( 'Layouts', 'gridly-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -165,14 +165,14 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_layout', 
 			array(
-                'label'   => __( 'Gridly Layout', 'gridly' ),
+                'label'   => __( 'Gridly Layout', 'gridly-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'grid',
                 'options' => array(
-					'grid'      => __( 'Smart Grid', 'gridly' ),
-					'flipper'   => __( '3D Smart Grid', 'gridly' ),
-					'smartcard' => __( 'Smart Card', 'gridly' ),
-					'appcard'   => __( 'App Card', 'gridly' ),
+					'grid'      => __( 'Smart Grid', 'gridly-elementor' ),
+					'flipper'   => __( '3D Smart Grid', 'gridly-elementor' ),
+					'smartcard' => __( 'Smart Card', 'gridly-elementor' ),
+					'appcard'   => __( 'App Card', 'gridly-elementor' ),
 				),
 			)
         );
@@ -180,20 +180,20 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns', 
 			array(
-                'label'     => __( 'Columns Per Row', 'gridly' ),
+                'label'     => __( 'Columns Per Row', 'gridly-elementor' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 3,
                 'options'   => array(
-					4 => __( 'Two', 'gridly' ),
-					3 => __( 'Three', 'gridly' ),
-					2 => __( 'Four', 'gridly' ),
+					4 => __( 'Two', 'gridly-elementor' ),
+					3 => __( 'Three', 'gridly-elementor' ),
+					2 => __( 'Four', 'gridly-elementor' ),
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .grid' => 'width: {{VALUE}}1%;',
 					'(desktop){{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: {{VALUE}}1%;',
 					'(tablet){{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: 45%;',
 					'(mobile){{WRAPPER}} .gridly-grids .gridly-flipper' => 'width: 100%;',
-					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}50px; height: {{VALUE}}50px;',
+					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'width: {{VALUE}}99px; height: {{VALUE}}99px;',
 				),
 				'condition' => array(
 					'gridly_post_layout!' => 'smartcard'
@@ -204,13 +204,13 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns_smartcard', 
 			array(
-                'label'     => __( 'Columns Per Row', 'gridly' ),
+                'label'     => __( 'Columns Per Row', 'gridly-elementor' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 4,
                 'options'   => array(
-					2 => __( 'Two', 'gridly' ),
-					3 => __( 'Three', 'gridly' ),
-					4 => __( 'Four', 'gridly' ),
+					2 => __( 'Two', 'gridly-elementor' ),
+					3 => __( 'Three', 'gridly-elementor' ),
+					4 => __( 'Four', 'gridly-elementor' ),
 				),
 				'selectors' => array(
 					'(desktop){{WRAPPER}} .smart-card-wrapper' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
@@ -226,9 +226,9 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns_gap', 
 			array(
-                'label'     => __( 'Columns Gap', 'gridly' ),
+                'label'     => __( 'Columns Gap', 'gridly-elementor' ),
                 'type'      => Controls_Manager::NUMBER,
-                'default'   => 6,
+                'default'   => 15,
 				'selectors' => array(
 					'{{WRAPPER}} .gridly-grids .gridly-flipper' => 'margin: {{VALUE}}px;',
 					'{{WRAPPER}} .gridly-grids .gridly-app-card' => 'margin: {{VALUE}}px;',
@@ -241,7 +241,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_columns_border_radius', 
 			array(
-                'label'     => __( 'Border Radius', 'gridly' ),
+                'label'     => __( 'Border Radius', 'gridly-elementor' ),
                 'type'      => Controls_Manager::NUMBER,
                 'default'   => 15,
 				'selectors' => array(
@@ -261,19 +261,19 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_post_content_align',
 			array(
-				'label'     => __( 'Content Alignment', 'gridly' ),
+				'label'     => __( 'Content Alignment', 'gridly-elementor' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => __( 'Left', 'gridly' ),
+						'title' => __( 'Left', 'gridly-elementor' ),
 						'icon'  => 'fa fa-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'gridly' ),
+						'title' => __( 'Center', 'gridly-elementor' ),
 						'icon'  => 'fa fa-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'gridly' ),
+						'title' => __( 'Right', 'gridly-elementor' ),
 						'icon'  => 'fa fa-align-right',
 					),
 				),
@@ -291,10 +291,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_readmore', 
 			array(
-                'label'       => __( 'Read More Text', 'gridly' ),
+                'label'       => __( 'Read More Text', 'gridly-elementor' ),
                 'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Read More', 'gridly' ),
-				'placeholder' => __( 'Add read more text', 'gridly' ),
+				'default'     => __( 'Read More', 'gridly-elementor' ),
+				'placeholder' => __( 'Add read more text', 'gridly-elementor' ),
 				'condition'   => array(
 					'gridly_post_layout' => array( 'flipper', 'smartcard' ),
 				),
@@ -304,10 +304,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_taxonomy_toggle', 
 			array(
-                'label'        => __( 'Show Taxonomy?', 'gridly' ),
+                'label'        => __( 'Show Taxonomy?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'condition'    => array(
@@ -319,10 +319,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_author_toggle', 
 			array(
-                'label'        => __( 'Show Author?', 'gridly' ),
+                'label'        => __( 'Show Author?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'condition'    => array(
@@ -334,10 +334,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_title_toggle', 
 			array(
-                'label'        => __( 'Show Title?', 'gridly' ),
+                'label'        => __( 'Show Title?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -346,7 +346,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_title_length', 
 			array(
-                'label'     => __( 'Title Length', 'gridly' ),
+                'label'     => __( 'Title Length', 'gridly-elementor' ),
                 'type'      => Controls_Manager::NUMBER,
                 'default'   => 3,
 				'condition' => array(
@@ -359,7 +359,7 @@ class Gridly_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'gridly_post_title_typography',
-				'label'     => __( 'Title Typography', 'gridly' ),
+				'label'     => __( 'Title Typography', 'gridly-elementor' ),
 				'selector'  => '{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .title, {{WRAPPER}} .gridly-grids .gridly-app-card .card-title h3 a, {{WRAPPER}} .gridly-grids .grid .grid-info .grid-title, {{WRAPPER}} .gridly-grids .gridly-flipper .container .front .inner .title',
 				'condition' => array(
 					'gridly_post_title_toggle' => 'yes',
@@ -370,10 +370,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_image_toggle', 
 			array(
-                'label'        => __( 'Show Image?', 'gridly' ),
+                'label'        => __( 'Show Image?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -382,10 +382,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_date_toggle', 
 			array(
-                'label'        => __( 'Show Date?', 'gridly' ),
+                'label'        => __( 'Show Date?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'condition'    => array(
@@ -397,10 +397,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_excerpt_toggle', 
 			array(
-                'label'        => __( 'Show Excerpt?', 'gridly' ),
+                'label'        => __( 'Show Excerpt?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'condition'    => array(
@@ -412,7 +412,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_excerpt_length', 
 			array(
-                'label'     => __( 'Excerpt Length', 'gridly' ),
+                'label'     => __( 'Excerpt Length', 'gridly-elementor' ),
                 'type'      => Controls_Manager::NUMBER,
                 'default'   => 20,
 				'condition' => array(
@@ -426,7 +426,7 @@ class Gridly_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'gridly_post_excerpt_typography',
-				'label'     => __( 'Excerpt Typography', 'gridly' ),
+				'label'     => __( 'Excerpt Typography', 'gridly-elementor' ),
 				'selector'  => '{{WRAPPER}} .smart-card-wrapper .gridly-smart-card .copy, {{WRAPPER}} .gridly-grids .grid .grid-info .grid-excerpt',
 				'condition' => array(
 					'gridly_post_excerpt_toggle' => 'yes',
@@ -438,10 +438,10 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
             'gridly_post_pagination_toggle', 
 			array(
-                'label'        => __( 'Show Pagination?', 'gridly' ),
+                'label'        => __( 'Show Pagination?', 'gridly-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'gridly' ),
-				'label_off'    => __( 'No', 'gridly' ),
+                'label_on'     => __( 'Yes', 'gridly-elementor' ),
+				'label_off'    => __( 'No', 'gridly-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -453,7 +453,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'gridly_color_section',
 			array(
-				'label' => __( 'Colors', 'gridly' ),
+				'label' => __( 'Colors', 'gridly-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -461,7 +461,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_title_color',
 			array(
-				'label'     => __( 'Title Color', 'gridly' ),
+				'label'     => __( 'Title Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'scheme'    => array(
 					'type'  => Color::get_type(),
@@ -482,7 +482,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_excerpt_color',
 			array(
-				'label'     => __( 'Excerpt Color', 'gridly' ),
+				'label'     => __( 'Excerpt Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'scheme'    => array(
 					'type'  => Color::get_type(),
@@ -502,7 +502,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_reading_time_color',
 			array(
-				'label'     => __( 'Reading Time Color', 'gridly' ),
+				'label'     => __( 'Reading Time Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'scheme'    => array(
 					'type'  => Color::get_type(),
@@ -521,7 +521,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_pagination_color',
 			array(
-				'label'     => __( 'Pagination Color', 'gridly' ),
+				'label'     => __( 'Pagination Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#302c2c',
 				'scheme'    => array(
@@ -540,7 +540,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_pagination_current_color',
 			array(
-				'label'     => __( 'Pagination Current Page Color', 'gridly' ),
+				'label'     => __( 'Pagination Current Page Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'scheme'    => array(
@@ -559,7 +559,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_pagination_current_bg_color',
 			array(
-				'label'     => __( 'Pagination Current Page BG Color', 'gridly' ),
+				'label'     => __( 'Pagination Current Page BG Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#2165e4',
 				'scheme'    => array(
@@ -578,7 +578,7 @@ class Gridly_Widget extends Widget_Base {
 		$this->add_control(
 			'gridly_post_date_color',
 			array(
-				'label'     => __( 'Date Color', 'gridly' ),
+				'label'     => __( 'Date Color', 'gridly-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'scheme'    => array(

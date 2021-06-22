@@ -2,7 +2,7 @@
 /**
  * Markup for Gridly Grid
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -48,7 +48,7 @@ $taxonomy       = ! empty( $taxonomies ) ? $taxonomies[0] : 'category';
             <p class="grid-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $excerpt_length ); ?></p>
         <?php endif; ?>
         <?php if ( 'yes' === $show_author ) : ?>
-            <span class="grid-by"><?php _e( 'by ', 'gridly' ); the_author_link(); ?></span>
+            <span class="grid-by"><?php _e( 'by ', 'gridly-elementor' ); the_author_link(); ?></span>
         <?php endif; ?>
     </div>
 </article>

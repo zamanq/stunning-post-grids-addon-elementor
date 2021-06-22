@@ -2,7 +2,7 @@
 /**
  * Markup for Flipper Grid
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -12,7 +12,7 @@ $show_title    = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_
 $show_image    = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
 $show_date     = isset( $settings['gridly_post_date_toggle'] ) ? sanitize_text_field( $settings['gridly_post_date_toggle'] ) : 'yes';
 $title_length  = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
-$readmore_text = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_field( $settings['gridly_post_readmore'] ) : __( 'Read More', 'gridly' );
+$readmore_text = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_field( $settings['gridly_post_readmore'] ) : __( 'Read More', 'gridly-elementor' );
 ?>
 
 <article class="gridly-flipper">

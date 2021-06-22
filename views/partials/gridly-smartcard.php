@@ -2,7 +2,7 @@
 /**
  * Markup for Gridly Smart Card
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -13,7 +13,7 @@ $show_image     = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text
 $show_excerpt   = isset( $settings['gridly_post_excerpt_toggle'] ) ? sanitize_text_field( $settings['gridly_post_excerpt_toggle'] ) : 'yes';
 $title_length   = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
 $excerpt_length = isset( $settings['gridly_post_excerpt_length'] ) ? absint( $settings['gridly_post_excerpt_length'] ) : 20;
-$readmore_text  = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_field( $settings['gridly_post_readmore'] ) : __( 'Read More', 'gridly' );
+$readmore_text  = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_field( $settings['gridly_post_readmore'] ) : __( 'Read More', 'gridly-elementor' );
 ?>
 
 <article class="gridly-smart-card" style="background-image: url( <?php 'yes' === $show_image && has_post_thumbnail( get_the_ID() ) ? the_post_thumbnail_url( 'full' ) : ''; ?> );">

@@ -2,7 +2,7 @@
 /**
  * Markup for Gridly App Cards
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
 defined( 'ABSPATH' ) || exit;

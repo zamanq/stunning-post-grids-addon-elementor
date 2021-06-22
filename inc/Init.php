@@ -2,10 +2,10 @@
 /**
  * Handles initialization of classes
  *
- * @package Gridly
+ * @package Gridly Elementor
  */
 
-namespace Gridly;
+namespace Gridly_Elementor;
 
 defined( 'ABSPATH' ) || exit;
 

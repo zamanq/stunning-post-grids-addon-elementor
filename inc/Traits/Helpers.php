@@ -2,10 +2,10 @@
 /**
  * Provides useful helper methods
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
-namespace Gridly\Traits;
+namespace Gridly_Elementor\Traits;
 
 use WP_Query;
 

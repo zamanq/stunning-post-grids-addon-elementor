@@ -2,10 +2,10 @@
 /**
  * Handles rendering the templates
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
-namespace Gridly\Traits;
+namespace Gridly_Elementor\Traits;
 
 use Elementor\Plugin;
 
@@ -38,7 +38,7 @@ trait Templates {
                 if ( $the_query->have_posts() ) :
                     while ( $the_query->have_posts() ) :
                         $the_query->the_post();
-                        require GRIDLY_DIR_PATH . 'views/partials/gridly-' . $gridly_layout . '.php';
+                        require GRIDLY_EL_DIR_PATH . 'views/partials/gridly-' . $gridly_layout . '.php';
                     endwhile;
                 endif;
                 wp_reset_postdata();

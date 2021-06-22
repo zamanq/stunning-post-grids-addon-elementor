@@ -2,13 +2,13 @@
 /**
  * Handles Elementor dependencies
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
-namespace Gridly\Setup;
+namespace Gridly_Elementor\Setup;
 
 use Elementor\Plugin;
-use Gridly\Widgets\Gridly_Widget;
+use Gridly_Elementor\Widgets\Gridly_Widget;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -44,7 +44,7 @@ class Setup {
     public function on_plugins_loaded() {
 
 		// Load plugin's textdomain.
-		load_plugin_textdomain( 'gridly' );
+		load_plugin_textdomain( 'gridly-elementor' );
 
 		// Check compatibility and then hook in.
         if ( $this->is_compatible() ) {
@@ -65,9 +65,9 @@ class Setup {
 	 */
 	public function add_gridly_widget_category( $elements_manager ) {
 		$elements_manager->add_category(
-			'gridly',
+			'gridly-elementor',
 			array(
-				'title' => __( 'Gridly', 'gridly' ),
+				'title' => __( 'Gridly', 'gridly-elementor' ),
 				'icon'  => 'fa fa-plug',
 			)
 		);
@@ -109,9 +109,9 @@ class Setup {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '%1$s requires %2$s to be installed and activated.', 'gridly' ),
-			'<strong>' . esc_html__( 'Gridly', 'gridly' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'gridly' ) . '</strong>'
+			esc_html__( '%1$s requires %2$s to be installed and activated.', 'gridly-elementor' ),
+			'<strong>' . esc_html__( 'Gridly', 'gridly-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'gridly-elementor' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -127,9 +127,9 @@ class Setup {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'gridly' ),
-			'<strong>' . esc_html__( 'Gridly', 'gridly' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'gridly' ) . '</strong>',
+			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'gridly-elementor' ),
+			'<strong>' . esc_html__( 'Gridly', 'gridly-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'gridly-elementor' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -146,9 +146,9 @@ class Setup {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'gridly' ),
-			'<strong>' . esc_html__( 'Gridly', 'gridly' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'gridly' ) . '</strong>',
+			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'gridly-elementor' ),
+			'<strong>' . esc_html__( 'Gridly', 'gridly-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'gridly-elementor' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 

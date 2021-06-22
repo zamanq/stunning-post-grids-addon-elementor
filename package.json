@@ -1,5 +1,5 @@
 {
-    "name": "gridly",
+    "name": "gridly-elementor",
     "version": "1.0.0",
     "description": "Gridly for Elementor. Prettify your Blog and Custom Post Types.",
     "main": "index.js",
@@ -9,8 +9,8 @@
         "watch": "npm run development -- --watch",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "makepot": "wp i18n make-pot --exclude='src,node_modules,vendor' . languages/gridly.pot",
-        "bundle": "dir-archiver --src . --dest ../gridly.zip --exclude .DS_Store .eslintrc.json .eslintignore mix-manifest.json .git .gitattributes .github .gitignore phpcs.xml README.md composer.json composer.lock node_modules package-lock.json package.json webpack.mix.js src",
+        "makepot": "wp i18n make-pot --exclude='src,node_modules,vendor' . languages/gridly-elementor.pot",
+        "bundle": "dir-archiver --src . --dest ../gridly-elementor.zip --exclude .DS_Store .eslintrc.json .eslintignore mix-manifest.json .git .gitattributes .github .gitignore phpcs.xml README.md composer.json composer.lock node_modules package-lock.json package.json webpack.mix.js src",
         "lint": "eslint \"./**/*.js\""
     },
     "devDependencies": {
@@ -38,7 +38,7 @@
         "plugin",
         "elementor"
     ],
-    "author": "XoXo Dev <hello@xoxodev.com> (https://www.xoxodev.com)",
+    "author": "Zaman.Q <itszamanq@gmail.com> (https://github.com/zamanq)",
     "license": "GPL-3.0",
     "dependencies": {
         "eslint-config-wordpress": "^2.0.0",

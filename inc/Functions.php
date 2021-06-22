@@ -2,7 +2,7 @@
 /**
  * Provids useful utility functions
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
 defined( 'ABSPATH' ) || exit;

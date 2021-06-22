@@ -2,15 +2,15 @@
 /**
  * Handles stuff during plugin uninstallation
  * 
- * @package Gridly
+ * @package Gridly Elementor
  */
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 
 $options = array(
-    'gridly_installed_at',
-    'gridly_version',
-    'gridly_license',
+    'gridly_el_installed_at',
+    'gridly_el_version',
+    'gridly_el_license',
 );
 
 foreach ( $options as $option ) {
