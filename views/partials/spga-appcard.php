@@ -1,19 +1,19 @@
 <?php
 /**
- * Markup for Gridly App Cards
+ * Markup for SPGA App Cards
  * 
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
 defined( 'ABSPATH' ) || exit;
 
 // Extract each setting into variables.
-$show_title   = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
-$show_image   = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
-$title_length = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
+$show_title   = isset( $settings['spga_post_title_toggle'] ) ? sanitize_text_field( $settings['spga_post_title_toggle'] ) : 'yes';
+$show_image   = isset( $settings['spga_post_image_toggle'] ) ? sanitize_text_field( $settings['spga_post_image_toggle'] ) : 'yes';
+$title_length = isset( $settings['spga_post_title_length'] ) ? absint( $settings['spga_post_title_length'] ) : 3;
 ?>
 
-<article class="gridly-app-card">
+<article class="spga-app-card">
     <div class="card-image">
     <?php if ( has_post_thumbnail( get_the_ID() ) && 'yes' === $show_image ) : ?>
         <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url( 'full' ); ?>" /></a>

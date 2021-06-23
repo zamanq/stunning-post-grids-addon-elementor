@@ -14,7 +14,7 @@ $bp-lg: 992px;
     margin: 0 auto;
 }
 
-.gridly-smart-card {
+.spga-smart-card {
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -99,8 +99,8 @@ $bp-lg: 992px;
         }
     }
 
-    .gridly-smart-card:hover,
-    .gridly-smart-card:focus-within {
+    .spga-smart-card:hover,
+    .spga-smart-card:focus-within {
         align-items: center;
 
         .content {
@@ -114,7 +114,7 @@ $bp-lg: 992px;
         }
     }
 
-    .gridly-smart-card:focus-within {
+    .spga-smart-card:focus-within {
         .content,
         .content > *:not(.title) {
             transition-duration: 0s;

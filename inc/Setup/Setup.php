@@ -2,13 +2,13 @@
 /**
  * Handles Elementor dependencies
  * 
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
-namespace Gridly_Elementor\Setup;
+namespace SPGA_Elementor\Setup;
 
 use Elementor\Plugin;
-use Gridly_Elementor\Widgets\Gridly_Widget;
+use SPGA_Elementor\Widgets\SPGA_Widget;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -44,12 +44,12 @@ class Setup {
     public function on_plugins_loaded() {
 
 		// Load plugin's textdomain.
-		load_plugin_textdomain( 'gridly-elementor' );
+		load_plugin_textdomain( 'spga-elementor' );
 
 		// Check compatibility and then hook in.
         if ( $this->is_compatible() ) {
             add_action( 'elementor/init', array( $this, 'register_widgets' ) );
-			add_action( 'elementor/elements/categories_registered', array( $this, 'add_gridly_widget_category' ) );
+			add_action( 'elementor/elements/categories_registered', array( $this, 'add_spga_widget_category' ) );
         }
     }
 
@@ -57,17 +57,17 @@ class Setup {
      * Register widgets
      */
     public function register_widgets() {
-        Plugin::instance()->widgets_manager->register_widget_type( new Gridly_Widget() );
+        Plugin::instance()->widgets_manager->register_widget_type( new SPGA_Widget() );
     }
 
 	/**
 	 * Add gridly widget category
 	 */
-	public function add_gridly_widget_category( $elements_manager ) {
+	public function add_spga_widget_category( $elements_manager ) {
 		$elements_manager->add_category(
-			'gridly-elementor',
+			'spga-elementor',
 			array(
-				'title' => __( 'Gridly', 'gridly-elementor' ),
+				'title' => __( 'SPGA Grids', 'spga-elementor' ),
 				'icon'  => 'fa fa-plug',
 			)
 		);
@@ -109,9 +109,9 @@ class Setup {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '%1$s requires %2$s to be installed and activated.', 'gridly-elementor' ),
-			'<strong>' . esc_html__( 'Gridly', 'gridly-elementor' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'gridly-elementor' ) . '</strong>'
+			esc_html__( '%1$s requires %2$s to be installed and activated.', 'spga-elementor' ),
+			'<strong>' . esc_html__( 'Stunning Post Grids Addon for Elementor', 'spga-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'spga-elementor' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -127,9 +127,9 @@ class Setup {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'gridly-elementor' ),
-			'<strong>' . esc_html__( 'Gridly', 'gridly-elementor' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'gridly-elementor' ) . '</strong>',
+			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'spga-elementor' ),
+			'<strong>' . esc_html__( 'Stunning Post Grids Addon for Elementor', 'spga-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'spga-elementor' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -146,9 +146,9 @@ class Setup {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'gridly-elementor' ),
-			'<strong>' . esc_html__( 'Gridly', 'gridly-elementor' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'gridly-elementor' ) . '</strong>',
+			esc_html__( '%1$s requires %2$s version %3$s or greater.', 'spga-elementor' ),
+			'<strong>' . esc_html__( 'Stunning Post Grids Addon for Elementor', 'spga-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'spga-elementor' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 

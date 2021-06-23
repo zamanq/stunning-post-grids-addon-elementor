@@ -1,4 +1,4 @@
-.gridly-flipper {
+.spga-flipper {
     cursor: pointer;
 
     .container {
@@ -125,19 +125,19 @@
 }
 
 @media screen and (min-width: 992px) {
-    .gridly-flipper {
+    .spga-flipper {
         width: calc(33.333333% - 2rem);
     }
 }
 
 @media screen and (max-width: 991px) {
-    .gridly-flipper {
+    .spga-flipper {
         width: calc(50% - 2rem);
     }
 }
 
 @media screen and (max-width: 767px) {
-    .gridly-flipper {
+    .spga-flipper {
         width: 100%;
         margin: 0 0 2rem 0;
     }

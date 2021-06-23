@@ -2,10 +2,10 @@
 /**
  * Provides useful helper methods
  * 
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
-namespace Gridly_Elementor\Traits;
+namespace SPGA_Elementor\Traits;
 
 use WP_Query;
 
@@ -27,18 +27,18 @@ trait Helpers {
         $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
         $args = array(
-            'post_type'           => ! empty( $settings['gridly_post_type'] ) ? sanitize_text_field( $settings['gridly_post_type'] ) : 'post',
+            'post_type'           => ! empty( $settings['spga_post_type'] ) ? sanitize_text_field( $settings['spga_post_type'] ) : 'post',
             'post_status'         => 'publish',
-            'posts_per_page'      => ! empty( $settings['gridly_posts_per_page'] ) ? absint( $settings['gridly_posts_per_page'] ) : 3,
-            'orderby'             => ! empty( $settings['gridly_post_orderby'] ) ? sanitize_text_field( $settings['gridly_post_orderby'] ) : 'date',
-            'order'               => ! empty( $settings['gridly_post_order'] ) ? sanitize_text_field( $settings['gridly_post_order'] ) : 'desc',
+            'posts_per_page'      => ! empty( $settings['spga_posts_per_page'] ) ? absint( $settings['spga_posts_per_page'] ) : 3,
+            'orderby'             => ! empty( $settings['spga_post_orderby'] ) ? sanitize_text_field( $settings['spga_post_orderby'] ) : 'date',
+            'order'               => ! empty( $settings['spga_post_order'] ) ? sanitize_text_field( $settings['spga_post_order'] ) : 'desc',
             'ignore_sticky_posts' => 1,
             'paged'               => $paged,
         );
 
         $args['tax_query'] = array();
 
-        $taxonomies = get_object_taxonomies( $settings['gridly_post_type'], 'objects' );
+        $taxonomies = get_object_taxonomies( $settings['spga_post_type'], 'objects' );
 
         foreach ( $taxonomies as $object ) {
             $setting_key = $object->name . '_ids';
@@ -56,8 +56,8 @@ trait Helpers {
             $args['tax_query']['relation'] = 'AND';
         }
 
-        if ( ! empty( $settings['gridly_post_authors'] ) ) {
-            $args['author__in'] = absint( $settings['gridly_post_authors'] );
+        if ( ! empty( $settings['spga_post_authors'] ) ) {
+            $args['author__in'] = absint( $settings['spga_post_authors'] );
         }
 
         $the_query = new WP_Query( $args );
@@ -146,6 +146,6 @@ trait Helpers {
             'prev_text' => '&#8592;',
             'next_text' => '&#8594;',
         );
-        echo '<div class="gridly-pagination">' . paginate_links( $pagination_args ) . '</div>';
+        echo '<div class="spga-pagination">' . paginate_links( $pagination_args ) . '</div>';
     }
 }

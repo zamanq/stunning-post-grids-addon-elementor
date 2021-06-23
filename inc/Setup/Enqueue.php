@@ -2,10 +2,10 @@
 /**
  * Handles registering all styles and scripts
  * 
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
-namespace Gridly_Elementor\Setup;
+namespace SPGA_Elementor\Setup;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -25,6 +25,6 @@ class Enqueue {
 	 * Enqueue scripts
 	 */
 	public function enqueue_frontend_scripts() {
-		wp_enqueue_style( 'gridly-styles', GRIDLY_EL_DIR_URL . '/assets/css/styles.min.css', null, GRIDLY_EL_VERSION, 'all' );
+		wp_enqueue_style( 'spga-elementor-styles', SPGA_EL_DIR_URL . '/assets/css/styles.min.css', null, SPGA_EL_VERSION, 'all' );
 	}
 }

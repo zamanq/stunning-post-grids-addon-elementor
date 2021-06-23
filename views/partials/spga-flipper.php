@@ -2,20 +2,20 @@
 /**
  * Markup for Flipper Grid
  * 
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
 defined( 'ABSPATH' ) || exit;
 
 // Extract each setting into variables.
-$show_title    = isset( $settings['gridly_post_title_toggle'] ) ? sanitize_text_field( $settings['gridly_post_title_toggle'] ) : 'yes';
-$show_image    = isset( $settings['gridly_post_image_toggle'] ) ? sanitize_text_field( $settings['gridly_post_image_toggle'] ) : 'yes';
-$show_date     = isset( $settings['gridly_post_date_toggle'] ) ? sanitize_text_field( $settings['gridly_post_date_toggle'] ) : 'yes';
-$title_length  = isset( $settings['gridly_post_title_length'] ) ? absint( $settings['gridly_post_title_length'] ) : 3;
-$readmore_text = isset( $settings['gridly_post_readmore'] ) ? sanitize_text_field( $settings['gridly_post_readmore'] ) : __( 'Read More', 'gridly-elementor' );
+$show_title    = isset( $settings['spga_post_title_toggle'] ) ? sanitize_text_field( $settings['spga_post_title_toggle'] ) : 'yes';
+$show_image    = isset( $settings['spga_post_image_toggle'] ) ? sanitize_text_field( $settings['spga_post_image_toggle'] ) : 'yes';
+$show_date     = isset( $settings['spga_post_date_toggle'] ) ? sanitize_text_field( $settings['spga_post_date_toggle'] ) : 'yes';
+$title_length  = isset( $settings['spga_post_title_length'] ) ? absint( $settings['spga_post_title_length'] ) : 3;
+$readmore_text = isset( $settings['spga_post_readmore'] ) ? sanitize_text_field( $settings['spga_post_readmore'] ) : __( 'Read More', 'spga-elementor' );
 ?>
 
-<article class="gridly-flipper">
+<article class="spga-flipper">
 	<div class="container">
 		<div class="front" style="background-image: url( <?php has_post_thumbnail( get_the_ID() ) && 'yes' === $show_image ? the_post_thumbnail_url( 'full' ) : ''; ?> );">
 			<div class="inner">

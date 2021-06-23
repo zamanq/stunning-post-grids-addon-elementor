@@ -2,10 +2,10 @@
 /**
  * Handles initialization of classes
  *
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
-namespace Gridly_Elementor;
+namespace SPGA_Elementor;
 
 defined( 'ABSPATH' ) || exit;
 

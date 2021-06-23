@@ -2,7 +2,7 @@
 /**
  * Provids useful utility functions
  * 
- * @package Gridly Elementor
+ * @package SPGA Elementor
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  * 
  * @return string $time
  */
-function gridly_estimated_reading_time( string $content ) {
+function spga_estimated_reading_time( string $content ) {
     $words    = str_word_count( strip_tags( $content ) );
     $minute   = floor( $words / 200 );
     $second   = floor( $words % 200 / ( 200 / 60 ) );
