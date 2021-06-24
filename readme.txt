@@ -4,7 +4,7 @@ Tags: content
 Requires at least: 5.3
 Tested up to: 5.7.2
 Requires PHP: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,6 +70,10 @@ Certainly. This plugin is free to use :)
 For any support/issues please go to the Support page of this plugin (https://wordpress.org/support/plugin/stunning-post-grids-addon-elementor) and let me know.
 
 == Changelog ==
+
+= 1.0.1
+
+* Proper slug added
 
 = 1.0.0
 
