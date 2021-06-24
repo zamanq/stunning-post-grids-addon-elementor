@@ -16,6 +16,26 @@ Stunning Post Grids Addon for Elementor is a plugin that offers beautiful and sm
 
 Elementor plugin needs to be installed and activated in order to use Stunning Post Grids Addon for Elementor.
 
+== Some of the Features of Stunning Post Grids Addon for Elementor ==
+
+1. Supports default and Custom Post Types
+2. Offers 3 different and stunning layouts
+3. Custom Typography for Title and Excerpts
+4. Custom Color Selection Controls
+5. Convenient Toggles to Show/Hide UI Elements
+6. Beautiful Pagination Option
+7. Responsive and Multiple Device Ready
+8. Completely FREE to use
+9. Translation Ready
+10. And much more...
+
+== Screenshots ==
+
+1. Smart Grid Layouts
+2. Custom Post Type Supports
+3. Multiple Layouts to Choose From
+4. Custom Color Options
+
 == Installation ==
 
 = Minimum Requirements =
@@ -34,6 +54,20 @@ This will open up a page showing all the available plugins in WordPress. In the 
 To install Stunning Post Grids Addon for Elementor plugin manually, you need to download the plugin and upload it to your webserver via any FTP application.
 
 The WordPress codex contains [instructions on how to do this here](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
+
+== Frequently Asked Questions ==
+
+= Does this plugin require Elementor? =
+Yes. For this plugin to work, Elementor plugin needs to be installed and activated
+
+= Does this plugin support custom post types? =
+Yes, absolutely!
+
+= Is this plugin free to use? =
+Certainly. This plugin is free to use :)
+
+= Where can I get support? =
+For any support/issues please go to the Support page of this plugin (https://wordpress.org/support/plugin/stunning-post-grids-addon-elementor) and let me know.
 
 == Changelog ==
 

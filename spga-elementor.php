@@ -37,6 +37,11 @@ endif;
 // Handles stuff at plugin activation.
 register_activation_hook( __FILE__, 'spga_elementor_activated' );
 
+/**
+ * Activation callback
+ *
+ * @return void
+ */
 function spga_elementor_activated() {
 	$installed_time = get_option( 'spga_el_installed_at' );
 
