@@ -2,15 +2,15 @@
 /**
  * Plugin Name:       Stunning Post Grids Addon for Elementor
  * Description:       Prettify your Blog and Custom Post Types with the Stunning Post Grids Addon for Elementor plugin. Let the others wonder while you beautify yours posts instantly.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Quamruzzaman
  * Author URI:        https://profiles.wordpress.org/zamanq/
  * Contributors:      zamanq
  * Requires at least: 5.6
- * Tested up to:      5.7.2
- * Tags:              content
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Tested up to:      5.8
+ * Tags:              content, post grids, elementor post grids, custom post types grid
+ * License:           GPLv3
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       spga-elementor
  *
  * @package SPGA Elementor
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 
 // Plugin specific constants.
 define( 'SPGA_EL_LICENSE', 'free' );
-define( 'SPGA_EL_VERSION', '1.0.1' );
+define( 'SPGA_EL_VERSION', '1.0.2' );
 define( 'SPGA_EL_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'SPGA_EL_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
