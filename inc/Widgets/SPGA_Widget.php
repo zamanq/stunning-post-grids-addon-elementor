@@ -7,7 +7,6 @@
 
 namespace SPGA_Elementor\Widgets;
 
-use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Color;
@@ -61,7 +60,7 @@ class SPGA_Widget extends Widget_Base {
 	/**
 	 * Register SPGA widget controls.
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		// Main Query Controls.
 		$this->start_controls_section(

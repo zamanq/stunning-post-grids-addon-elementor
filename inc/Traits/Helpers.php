@@ -89,16 +89,20 @@ trait Helpers {
      * Get authors
      */
     public static function get_authors() {
-        $users = get_users(
-            array(
-                'who'                 => 'authors',
-                'has_published_posts' => true,
-                'fields'              => array(
-                    'ID',
-                    'display_name',
-                ),
-            )
+
+        $args = array(
+            'capability'          => array( 'edit_posts' ),
+            'has_published_posts' => true,
+            'fields'              => array( 'ID', 'display_name' ),
         );
+
+        // Capability queries newly introduced in WP 5.9.
+        if ( version_compare( $GLOBALS['wp_version'], '5.9', '<' ) ) {
+            $args['who'] = 'authors';
+            unset( $args['capability'] );
+        }
+
+        $users = get_users( $args );
 
         if ( ! empty( $users ) ) {
             $authors = wp_list_pluck( $users, 'display_name', 'ID' );
@@ -141,7 +145,7 @@ trait Helpers {
         $pagination_args = array(
             'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
             'format'    => '?paged=%#%',
-            'current'   => max( 1, get_query_var('paged') ),
+            'current'   => max( 1, get_query_var( 'paged' ) ),
             'total'     => $total_pages,
             'prev_text' => '&#8592;',
             'next_text' => '&#8594;',

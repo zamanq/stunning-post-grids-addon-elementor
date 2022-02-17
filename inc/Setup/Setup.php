@@ -57,7 +57,11 @@ class Setup {
      * Register widgets
      */
     public function register_widgets() {
-        Plugin::instance()->widgets_manager->register_widget_type( new SPGA_Widget() );
+		if ( version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
+			Plugin::instance()->widgets_manager->register( new SPGA_Widget() );
+		} else {
+			Plugin::instance()->widgets_manager->register_widget_type( new SPGA_Widget() );
+		}
     }
 
 	/**

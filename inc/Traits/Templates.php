@@ -7,7 +7,7 @@
 
 namespace SPGA_Elementor\Traits;
 
-use Elementor\Plugin;
+use SPGA_Elementor\Traits\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
