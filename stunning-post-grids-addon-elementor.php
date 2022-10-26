@@ -7,8 +7,8 @@
  * Author URI:        https://profiles.wordpress.org/zamanq/
  * Contributors:      zamanq
  * Requires at least: 5.6
- * Tested up to:      5.9
- * Elementor tested up to: 3.5.5
+ * Tested up to:      6.1
+ * Elementor tested up to: 3.7.8
  * Tags:              content, post grids, elementor post grids, custom post types grid
  * License:           GPLv3
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html

@@ -1,23 +1,23 @@
-# Copyright (C) 2021 Quamruzzaman
-# This file is distributed under the same license as the Stunning Post Grids Addon for Elementor plugin.
+# Copyright (C) 2022 Quamruzzaman
+# This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Stunning Post Grids Addon for Elementor 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/spga-elementor\n"
+"Project-Id-Version: Stunning Post Grids Addon for Elementor 1.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/stunning-post-grids-addon-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-24T16:07:43+00:00\n"
+"POT-Creation-Date: 2022-02-17T16:43:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: spga-elementor\n"
 
 #. Plugin Name of the plugin
-#: inc/Setup/Setup.php:113
-#: inc/Setup/Setup.php:131
-#: inc/Setup/Setup.php:150
+#: inc/Setup/Setup.php:117
+#: inc/Setup/Setup.php:135
+#: inc/Setup/Setup.php:154
 msgid "Stunning Post Grids Addon for Elementor"
 msgstr ""
 
@@ -33,147 +33,157 @@ msgstr ""
 msgid "https://profiles.wordpress.org/zamanq/"
 msgstr ""
 
-#: inc/Setup/Setup.php:70
+#: inc/Setup/Setup.php:74
 msgid "SPGA Grids"
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor
-#: inc/Setup/Setup.php:112
+#: inc/Setup/Setup.php:116
 msgid "%1$s requires %2$s to be installed and activated."
 msgstr ""
 
-#: inc/Setup/Setup.php:114
-#: inc/Setup/Setup.php:132
+#: inc/Setup/Setup.php:118
+#: inc/Setup/Setup.php:136
 msgid "Elementor"
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: inc/Setup/Setup.php:130
-#: inc/Setup/Setup.php:149
+#: inc/Setup/Setup.php:134
+#: inc/Setup/Setup.php:153
 msgid "%1$s requires %2$s version %3$s or greater."
 msgstr ""
 
-#: inc/Setup/Setup.php:151
+#: inc/Setup/Setup.php:155
 msgid "PHP"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:40
+#: inc/Widgets/SPGA_Widget.php:39
 msgid "SPGA Grid"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:70
+#: inc/Widgets/SPGA_Widget.php:69
 msgid "Main Query"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:78
+#: inc/Widgets/SPGA_Widget.php:77
 msgid "Post Type"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:112
+#: inc/Widgets/SPGA_Widget.php:111
 msgid "Author"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:123
+#: inc/Widgets/SPGA_Widget.php:122
 msgid "Order By"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:133
+#: inc/Widgets/SPGA_Widget.php:132
 msgid "Order"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:137
+#: inc/Widgets/SPGA_Widget.php:136
 msgid "Ascending"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:138
+#: inc/Widgets/SPGA_Widget.php:137
 msgid "Descending"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:146
+#: inc/Widgets/SPGA_Widget.php:145
 msgid "Posts Per Page"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:160
+#: inc/Widgets/SPGA_Widget.php:159
 msgid "Layouts"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:168
+#: inc/Widgets/SPGA_Widget.php:167
 msgid "Layout"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:172
+#: inc/Widgets/SPGA_Widget.php:171
 msgid "Smart Grid"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:173
+#: inc/Widgets/SPGA_Widget.php:172
 msgid "3D Smart Grid"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:174
+#: inc/Widgets/SPGA_Widget.php:173
 msgid "Smart Card"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:182
-#: inc/Widgets/SPGA_Widget.php:205
+#: inc/Widgets/SPGA_Widget.php:181
+#: inc/Widgets/SPGA_Widget.php:204
 msgid "Columns Per Row"
+msgstr ""
+
+#: inc/Widgets/SPGA_Widget.php:185
+#: inc/Widgets/SPGA_Widget.php:208
+msgid "Two"
 msgstr ""
 
 #: inc/Widgets/SPGA_Widget.php:186
 #: inc/Widgets/SPGA_Widget.php:209
-msgid "Two"
+msgid "Three"
 msgstr ""
 
 #: inc/Widgets/SPGA_Widget.php:187
 #: inc/Widgets/SPGA_Widget.php:210
-msgid "Three"
-msgstr ""
-
-#: inc/Widgets/SPGA_Widget.php:188
-#: inc/Widgets/SPGA_Widget.php:211
 msgid "Four"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:227
+#: inc/Widgets/SPGA_Widget.php:226
 msgid "Columns Gap"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:241
+#: inc/Widgets/SPGA_Widget.php:240
 msgid "Border Radius"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:257
+#: inc/Widgets/SPGA_Widget.php:256
 msgid "Content Alignment"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:261
+#: inc/Widgets/SPGA_Widget.php:260
 msgid "Left"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:265
+#: inc/Widgets/SPGA_Widget.php:264
 msgid "Center"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:269
+#: inc/Widgets/SPGA_Widget.php:268
 msgid "Right"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:287
+#: inc/Widgets/SPGA_Widget.php:286
 msgid "Read More Text"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:289
+#: inc/Widgets/SPGA_Widget.php:288
 #: views/partials/spga-flipper.php:15
 #: views/partials/spga-smartcard.php:16
 msgid "Read More"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:290
+#: inc/Widgets/SPGA_Widget.php:289
 msgid "Add read more text"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:300
+#: inc/Widgets/SPGA_Widget.php:299
 msgid "Show Taxonomy?"
+msgstr ""
+
+#: inc/Widgets/SPGA_Widget.php:301
+#: inc/Widgets/SPGA_Widget.php:316
+#: inc/Widgets/SPGA_Widget.php:331
+#: inc/Widgets/SPGA_Widget.php:367
+#: inc/Widgets/SPGA_Widget.php:379
+#: inc/Widgets/SPGA_Widget.php:394
+#: inc/Widgets/SPGA_Widget.php:435
+msgid "Yes"
 msgstr ""
 
 #: inc/Widgets/SPGA_Widget.php:302
@@ -183,88 +193,78 @@ msgstr ""
 #: inc/Widgets/SPGA_Widget.php:380
 #: inc/Widgets/SPGA_Widget.php:395
 #: inc/Widgets/SPGA_Widget.php:436
-msgid "Yes"
-msgstr ""
-
-#: inc/Widgets/SPGA_Widget.php:303
-#: inc/Widgets/SPGA_Widget.php:318
-#: inc/Widgets/SPGA_Widget.php:333
-#: inc/Widgets/SPGA_Widget.php:369
-#: inc/Widgets/SPGA_Widget.php:381
-#: inc/Widgets/SPGA_Widget.php:396
-#: inc/Widgets/SPGA_Widget.php:437
 msgid "No"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:315
+#: inc/Widgets/SPGA_Widget.php:314
 msgid "Show Author?"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:330
+#: inc/Widgets/SPGA_Widget.php:329
 msgid "Show Title?"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:342
+#: inc/Widgets/SPGA_Widget.php:341
 msgid "Title Length"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:355
+#: inc/Widgets/SPGA_Widget.php:354
 msgid "Title Typography"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:366
+#: inc/Widgets/SPGA_Widget.php:365
 msgid "Show Image?"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:378
+#: inc/Widgets/SPGA_Widget.php:377
 msgid "Show Date?"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:393
+#: inc/Widgets/SPGA_Widget.php:392
 msgid "Show Excerpt?"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:408
+#: inc/Widgets/SPGA_Widget.php:407
 msgid "Excerpt Length"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:422
+#: inc/Widgets/SPGA_Widget.php:421
 msgid "Excerpt Typography"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:434
+#: inc/Widgets/SPGA_Widget.php:433
 msgid "Show Pagination?"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:449
+#: inc/Widgets/SPGA_Widget.php:448
 msgid "Colors"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:457
+#: inc/Widgets/SPGA_Widget.php:456
 msgid "Title Color"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:477
+#: inc/Widgets/SPGA_Widget.php:476
 msgid "Excerpt Color"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:497
+#: inc/Widgets/SPGA_Widget.php:496
 msgid "Reading Time Color"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:516
+#: inc/Widgets/SPGA_Widget.php:515
 msgid "Pagination Color"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:535
+#: inc/Widgets/SPGA_Widget.php:534
 msgid "Pagination Current Page Color"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:554
+#: inc/Widgets/SPGA_Widget.php:553
 msgid "Pagination Current Page BG Color"
 msgstr ""
 
-#: inc/Widgets/SPGA_Widget.php:573
+#: inc/Widgets/SPGA_Widget.php:572
 msgid "Date Color"
 msgstr ""
 
